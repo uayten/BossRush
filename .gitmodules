@@ -1,0 +1,3 @@
+[submodule "Plugins/JoyShockLibrary4Unreal"]
+	path = Plugins/JoyShockLibrary4Unreal
+	url = https://github.com/uayten/JoyShockLibrary4Unreal.git

@@ -1,0 +1,29 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "True Colors (Tonemap Disabler)",
+	"Description": "Renders colors exactly as authored. Disables the ACES tone curve and gamut expansion across every view -- editor viewports, play-in-editor and packaged builds -- with no Post Process Volume required.",
+	"Category": "Rendering",
+	"CreatedBy": "Antonio Froz",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": false,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "TrueColors",
+			"Type": "Runtime",
+			"LoadingPhase": "PostEngineInit"
+		},
+		{
+			"Name": "TrueColorsEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}
