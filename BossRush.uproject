@@ -41,6 +41,10 @@
 			"Enabled": true
 		},
 		{
+			"Name": "NodeScribe",
+			"Enabled": true
+		},
+		{
 			"Name": "VC_Tonemapper_Toolkit",
 			"Enabled": false,
 			"MarketplaceURL": "com.epicgames.launcher://ue/Fab/product/29a328ed-3413-41ea-8f46-308cddc19f87",
