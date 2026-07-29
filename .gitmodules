@@ -1,3 +1,6 @@
 [submodule "Plugins/JoyShockLibrary4Unreal"]
 	path = Plugins/JoyShockLibrary4Unreal
 	url = https://github.com/uayten/JoyShockLibrary4Unreal.git
+[submodule "Plugins/NodeScribe"]
+	path = Plugins/NodeScribe
+	url = https://github.com/uayten/NodeScribe.git
