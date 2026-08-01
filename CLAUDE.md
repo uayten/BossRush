@@ -160,3 +160,7 @@ do `BP_Golem` concede as habilidades. A ficha não consegue ler esse valor, e o
   `GA_GolemSalto`, a cadeia depois do `Cast to Character` sai sem rótulo — o
   texto lido não recria aquela ligação se colado de volta. Confira antes de
   reescrever um grafo que tenha Cast no meio da execução.
+- **Classe de Blueprint só é encontrada se o asset estiver carregado.** A busca
+  varre as classes em memória. No editor aberto isso raramente aparece; num
+  commandlet pelado, `variavel X : BP_Golem` não resolve até alguém carregar o
+  `BP_Golem`.
