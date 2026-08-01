@@ -9,6 +9,17 @@ Saved/
 Build/
 !Build/*/Resources/
 
+# Plugins ficam de fora por padrao: cada um tem o seu proprio repositorio,
+# e o git nao consegue engolir os arquivos de um repositorio dentro de outro.
+# O NodeScribe, por exemplo, e um clone a parte de github.com/uayten/NodeScribe
+# e precisa ser clonado a mao em cada maquina nova.
+/Plugins/*
+
+# Excecoes: estes dois JA sao versionados e continuam sendo.
+# O TrueColors mora aqui dentro mesmo; o JoyShockLibrary4Unreal e submodulo.
+!/Plugins/TrueColors/
+!/Plugins/JoyShockLibrary4Unreal
+
 # Visual Studio / Rider
 .vs/
 .idea/
