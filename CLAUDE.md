@@ -33,6 +33,9 @@ Toolset MCP `nodescribe_toolset.toolsets.graph.NodeScribeTools`:
 | `write_object(target, text)` | aplica uma ficha. Lista de mudanças, não estado final |
 | `read_graph(graph)` | um grafo de Blueprint inteiro como texto |
 | `write_graph(graph, text)` | cria nodes a partir do texto |
+| `read_tags(filter)` | as Gameplay Tags declaradas, uma por linha |
+| `write_tags(text, source)` | cria tags. `source` é o ini (`BossRush.ini`) |
+| `create_asset(path, parent)` | asset vazio. Só dentro de `/Game/` |
 | `get_format_docs()` | a especificação do formato |
 | `save_all_and_quit()` | salva e fecha o editor |
 
@@ -71,9 +74,9 @@ mecânica sem ler o asset produz solução que ignora metade do que já está fe
 que o usuário pediu explicitamente pode seguir; escrita que você achou boa
 ideia, pergunte.
 
-**Não existe `create_asset`.** Nem no NodeScribe nem no toolset nativo — só
-`duplicate`. Asset novo é o usuário que cria pelo Content Browser, e você diz
-o que clicar.
+**`create_asset` existe no NodeScribe**, e só lá — o toolset nativo tem
+`duplicate`, `move` e `delete`, e não tem criação. Nunca sobrescreve, e só cria
+dentro de `/Game/`. O asset fica sujo, sem salvar, como qualquer recém-criado.
 
 **Medido, e não vale trazer para o plugin:** criar, mover ou duplicar asset
 pelo toolset nativo custa ~4.000 tokens de descoberta uma vez por sessão e ~50
@@ -146,7 +149,11 @@ do `BP_Golem` concede as habilidades. A ficha não consegue ler esse valor, e o
 
 - **Escrever Behavior Tree ainda não existe.** Ler funciona. Mudança na árvore
   é o usuário quem faz, e você diz o que clicar.
-- **`write_object` não cria variável nem componente**, e não apaga nada.
+- **`write_object` cria variável de Blueprint** (`variavel X : Tipo editavel`),
+  e só apaga com a palavra `apagar`. **Componente ele não cria.**
+- **`write_tags` não apaga nem renomeia tag**, e com `source` vazio grava em
+  `DefaultGameplayTags.ini` — as tags deste projeto moram em
+  `Config/Tags/BossRush.ini`, então passe `source` para não espalhar.
 - **Struct grande** abre e mostra só o membro que mudou; o que nem assim cabe
   sai nomeado num `[nota]`, e você pede pelo nome para ver inteiro.
 - **Cast com continuação não volta igual.** No `Gameplay Ability Graph` do
