@@ -32,7 +32,7 @@ Toolset MCP `nodescribe_toolset.toolsets.graph.NodeScribeTools`:
 | `read_object(target, filter)` | propriedades de qualquer objeto, classe, CDO, ator ou asset. Filtro vazio = só o que difere do padrão |
 | `write_object(target, text)` | aplica uma ficha. Lista de mudanças, não estado final |
 | `read_graph(graph)` | um grafo de Blueprint inteiro como texto |
-| `write_graph(graph, text)` | cria nodes a partir do texto |
+| `write_graph(graph, text, substituir)` | cria nodes a partir do texto. `substituir` apaga o grafo antes — e recusa, sem mexer em nada, se a leitura do grafo atual perder alguma coisa |
 | `read_tags(filter)` | as Gameplay Tags declaradas, uma por linha |
 | `write_tags(text, source)` | cria tags. `source` é o ini (`BossRush.ini`) |
 | `create_asset(path, parent)` | asset vazio. Só dentro de `/Game/` |
